@@ -3,7 +3,6 @@ import { createServer } from 'http'
 import * as express from 'express'
 import * as bodyParser from 'body-parser'
 import * as cors from 'cors'
-import * as gpio from 'gpio'
 import api from './app'
 
 const host = 'localhost'

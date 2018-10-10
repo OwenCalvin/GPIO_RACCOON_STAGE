@@ -3,8 +3,9 @@ import { Router } from 'express'
 const router = Router()
 
 let on = false
+const pin = 40
 
-const GPIO_3 = gpio.setup(3, gpio.DIR_OUT, () => {
+gpio.setup(pin, gpio.DIR_OUT, () => {
   console.log('GPIO ready')
 })
 
@@ -20,6 +21,11 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   on = !on
   console.log(on)
+  gpio.write(pin, on, (err) => {
+    if (err) {
+      console.error(err)
+    }
+  })
   res.send({on: on})
 })
 
