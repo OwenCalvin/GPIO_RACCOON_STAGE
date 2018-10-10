@@ -1,7 +1,7 @@
 const btn = document.querySelector('#btn')
 let on = false
 const server = axios.create({
-  baseURL: 'http://localhost:4500/'
+  baseURL: 'http://192.168.1.26:4500/'
 })
 
 function resetButton () {
