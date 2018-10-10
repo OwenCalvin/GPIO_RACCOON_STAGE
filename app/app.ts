@@ -6,12 +6,8 @@ let on = false
 const pin = 40
 
 gpio.setup(pin, gpio.DIR_OUT, () => {
-  console.log('GPIO ready')
+  console.log(`Pin ${pin} ready`)
 })
-
-function setGPIO (onOff) {
-  gpio.set()
-}
 
 router.get('/', (req, res) => {
   console.log(on)
